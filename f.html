@@ -13,8 +13,14 @@ body{margin:0}
 a{color:#111111;text-decoration:none}
 a:hover{color:#111111;text-decoration:underline;text-underline-offset:4px}
 img{display:block}
+.ph-tile{appearance:none;padding:0;margin:0;border:0;background:#8a8883;cursor:zoom-in;display:block;overflow:hidden;min-width:0}
+.ph-tile img{transition:transform .5s ease}
+.ph-tile:hover img{transform:scale(1.03)}
+.ph-tile:focus-visible{outline:2px solid #111111;outline-offset:2px}
+.ph-lb-btn{appearance:none;border:0;background:none;color:#E8E6E1;width:56px;height:56px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.ph-lb-btn:hover{color:#FFFFFF}
 @media (max-width: 760px){
-  .ph-work{grid-template-columns:repeat(1,minmax(0,1fr)) !important}
+  .ph-mosaic{grid-template-columns:repeat(2,minmax(0,1fr)) !important;grid-auto-rows:calc((100vw - 88px) / 2) !important}
   .ph-nav-links{display:none !important}
   .ph-about{grid-template-columns:repeat(1,minmax(0,1fr)) !important}
   .ph-about > *{grid-column:auto !important}
@@ -55,9 +61,8 @@ img{display:block}
 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"></path></svg>
 </a>
 </div>
-<figure style="flex: 1 1 520px; min-width: 0; margin: 0; display: flex; flex-direction: column; gap: 10px">
+<figure style="flex: 1 1 520px; min-width: 0; margin: 0">
 <img src="img/hero.jpg" alt="Black-and-white studio portrait, model in a leather coat seated on a white plinth" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 30%; filter: grayscale(1)">
-<figcaption style="display: flex; justify-content: space-between; font-size: 12px"><span style="font-weight: 700">Editorial</span><span style="color: #2a2a28">Makeup</span></figcaption>
 </figure>
 </section>
 
@@ -67,75 +72,62 @@ img{display:block}
 <h2 style="margin: 0; font-stretch: 125%; font-size: clamp(26px, 3vw, 40px); font-weight: 800; text-transform: uppercase; letter-spacing: -0.01em">Selected Work</h2>
 <span style="font-size: 13px; font-weight: 700">(12)</span>
 </div>
-<div class="ph-work" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 24px; row-gap: 48px">
+<div class="ph-mosaic" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: calc((100vw - 104px) / 4); grid-auto-flow: dense; gap: 8px">
 
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
-<img src="img/p01.jpg" alt="Model in a white robe and sunglasses, red lip" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 30%">
-<figcaption style="display: flex; gap: 12px; font-size: 12px"><span style="font-weight: 700">01</span><span style="color: #2a2a28">Editorial</span></figcaption>
-</figure>
+<button type="button" class="ph-tile" data-i="0" aria-label="Open image 01 of 12" style="grid-column: span 2; grid-row: span 2">
+<img src="img/p01.jpg" alt="Model in a white robe and sunglasses, red lip" style="width: 100%; height: 100%; object-fit: cover; object-position: center 30%">
+</button>
 
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
-<img src="img/p02.jpg" alt="Model in a red sculptural top against a pale wall" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 25%">
-<figcaption style="display: flex; gap: 12px; font-size: 12px"><span style="font-weight: 700">02</span><span style="color: #2a2a28">Editorial</span></figcaption>
-</figure>
+<button type="button" class="ph-tile" data-i="1" aria-label="Open image 02 of 12" style="grid-column: span 1; grid-row: span 2">
+<img src="img/p02.jpg" alt="Model in a red sculptural top against a pale wall" style="width: 100%; height: 100%; object-fit: cover; object-position: center 25%">
+</button>
 
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
-<img src="img/p03.jpg" alt="Close-up of a glossed berry lip and skin" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center">
-<figcaption style="display: flex; gap: 12px; font-size: 12px"><span style="font-weight: 700">03</span><span style="color: #2a2a28">Beauty</span></figcaption>
-</figure>
+<button type="button" class="ph-tile" data-i="2" aria-label="Open image 03 of 12" style="grid-column: span 1; grid-row: span 1">
+<img src="img/p03.jpg" alt="Close-up of a glossed berry lip and skin" style="width: 100%; height: 100%; object-fit: cover; object-position: center">
+</button>
 
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
-<img src="img/p04.jpg" alt="Black-and-white, model in zebra-print legwear" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center">
-<figcaption style="display: flex; gap: 12px; font-size: 12px"><span style="font-weight: 700">04</span><span style="color: #2a2a28">Editorial</span></figcaption>
-</figure>
+<button type="button" class="ph-tile" data-i="3" aria-label="Open image 04 of 12" style="grid-column: span 1; grid-row: span 1">
+<img src="img/p06.jpg" alt="Clean beauty portrait, slicked hair, soft bronze eye" style="width: 100%; height: 100%; object-fit: cover; object-position: center">
+</button>
 
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
-<img src="img/p05.jpg" alt="Model in a cobalt kaftan against a red backdrop" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 20%">
-<figcaption style="display: flex; gap: 12px; font-size: 12px"><span style="font-weight: 700">05</span><span style="color: #2a2a28">Campaign</span></figcaption>
-</figure>
+<button type="button" class="ph-tile" data-i="4" aria-label="Open image 05 of 12" style="grid-column: span 1; grid-row: span 2">
+<img src="img/p07.jpg" alt="Black-and-white, oversized printed coat" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%">
+</button>
 
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
-<img src="img/p06.jpg" alt="Clean beauty portrait, slicked hair, soft bronze eye" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center">
-<figcaption style="display: flex; gap: 12px; font-size: 12px"><span style="font-weight: 700">06</span><span style="color: #2a2a28">Beauty</span></figcaption>
-</figure>
+<button type="button" class="ph-tile" data-i="5" aria-label="Open image 06 of 12" style="grid-column: span 2; grid-row: span 2">
+<img src="img/p05.jpg" alt="Model in a cobalt kaftan against a red backdrop" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%">
+</button>
 
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
-<img src="img/p07.jpg" alt="Black-and-white, oversized printed coat" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 20%">
-<figcaption style="display: flex; gap: 12px; font-size: 12px"><span style="font-weight: 700">07</span><span style="color: #2a2a28">Editorial</span></figcaption>
-</figure>
+<button type="button" class="ph-tile" data-i="6" aria-label="Open image 07 of 12" style="grid-column: span 1; grid-row: span 1">
+<img src="img/p04.jpg" alt="Black-and-white, model in zebra-print legwear" style="width: 100%; height: 100%; object-fit: cover; object-position: center">
+</button>
 
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
-<img src="img/p08b.jpg" alt="Runway look in yellow and cream with a wide-brim hat" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 20%">
-<figcaption style="display: flex; gap: 12px; font-size: 12px"><span style="font-weight: 700">08</span><span style="color: #2a2a28">Runway</span></figcaption>
-</figure>
+<button type="button" class="ph-tile" data-i="7" aria-label="Open image 08 of 12" style="grid-column: span 1; grid-row: span 1">
+<img src="img/p11b.jpg" alt="Two models in neutral trench coats, one in a printed headscarf" style="width: 100%; height: 100%; object-fit: cover; object-position: center 25%">
+</button>
 
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
-<img src="img/p09.jpg" alt="Gold sequinned gown in warm, low light" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 30%">
-<figcaption style="display: flex; gap: 12px; font-size: 12px"><span style="font-weight: 700">09</span><span style="color: #2a2a28">Editorial</span></figcaption>
-</figure>
+<button type="button" class="ph-tile" data-i="8" aria-label="Open image 09 of 12" style="grid-column: span 2; grid-row: span 1">
+<img src="img/p10.jpg" alt="Graphic blue and red eye close-up" style="width: 100%; height: 100%; object-fit: cover; object-position: center 40%">
+</button>
 
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
-<img src="img/p10.jpg" alt="Graphic blue and red eye close-up" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center">
-<figcaption style="display: flex; gap: 12px; font-size: 12px"><span style="font-weight: 700">10</span><span style="color: #2a2a28">Beauty</span></figcaption>
-</figure>
+<button type="button" class="ph-tile" data-i="9" aria-label="Open image 10 of 12" style="grid-column: span 2; grid-row: span 2">
+<img src="img/p09.jpg" alt="Gold sequinned gown in warm, low light" style="width: 100%; height: 100%; object-fit: cover; object-position: center 30%">
+</button>
 
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
-<img src="img/p11b.jpg" alt="Two models in neutral trench coats, one in a printed headscarf" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 25%">
-<figcaption style="display: flex; gap: 12px; font-size: 12px"><span style="font-weight: 700">11</span><span style="color: #2a2a28">Editorial</span></figcaption>
-</figure>
+<button type="button" class="ph-tile" data-i="10" aria-label="Open image 11 of 12" style="grid-column: span 1; grid-row: span 1">
+<img src="img/p08b.jpg" alt="Runway look in yellow and cream with a wide-brim hat" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%">
+</button>
 
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
-<img src="img/p12.jpg" alt="Black-and-white studio portrait on a white plinth" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 30%">
-<figcaption style="display: flex; gap: 12px; font-size: 12px"><span style="font-weight: 700">12</span><span style="color: #2a2a28">Editorial</span></figcaption>
-</figure>
+<button type="button" class="ph-tile" data-i="11" aria-label="Open image 12 of 12" style="grid-column: span 1; grid-row: span 1">
+<img src="img/p12.jpg" alt="Black-and-white studio portrait on a white plinth" style="width: 100%; height: 100%; object-fit: cover; object-position: center 30%">
+</button>
 
 </div>
 </section>
 
 <!-- Wide break -->
-<figure style="margin: 0 0 140px; display: flex; flex-direction: column; gap: 10px">
+<figure style="margin: 0 0 140px">
 <img src="img/wide.jpg" alt="Model in a gold headpiece against a dark, warm background" style="width: 100%; height: clamp(360px, 62vw, 860px); object-fit: cover; object-position: center 35%">
-<figcaption style="padding: 0 40px; display: flex; gap: 12px; font-size: 12px"><span style="font-weight: 700">Editorial</span><span style="color: #2a2a28">Makeup &amp; headpiece styling</span></figcaption>
 </figure>
 
 <!-- About -->
@@ -194,7 +186,40 @@ img{display:block}
 </footer>
 </section>
 
+<!-- Lightbox -->
+
+
 </div>
+<div class="ph-lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden style="position:fixed;inset:0;z-index:100;background:rgba(14,14,13,.96);display:none;align-items:center;justify-content:center;padding:72px 80px">
+<img alt="" style="max-width:100%;max-height:100%;object-fit:contain">
+<button type="button" class="ph-lb-btn" data-lb="close" aria-label="Close" style="position:absolute;top:12px;right:12px"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 4l14 14M18 4L4 18"></path></svg></button>
+<button type="button" class="ph-lb-btn" data-lb="prev" aria-label="Previous image" style="position:absolute;left:12px;top:50%;transform:translateY(-50%)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M15 4l-8 8 8 8"></path></svg></button>
+<button type="button" class="ph-lb-btn" data-lb="next" aria-label="Next image" style="position:absolute;right:12px;top:50%;transform:translateY(-50%)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 4l8 8-8 8"></path></svg></button>
+<span class="ph-lb-count" style="position:absolute;bottom:24px;left:50%;transform:translateX(-50%);color:#E8E6E1;font-stretch:125%;font-size:11px;font-weight:600;letter-spacing:.1em"></span>
+</div>
+<script>
+(function(){
+  var tiles=[].slice.call(document.querySelectorAll('.ph-tile')), lb=document.querySelector('.ph-lightbox');
+  if(!tiles.length||!lb) return;
+  var img=lb.querySelector('img'), count=lb.querySelector('.ph-lb-count'), cur=-1, opener=null, n=tiles.length;
+  var pad=function(x){return (x<10?'0':'')+x};
+  function show(i){ cur=(i+n)%n; var t=tiles[cur].querySelector('img'); img.src=t.currentSrc||t.src; img.alt=t.alt; count.textContent=pad(cur+1)+' / '+pad(n); }
+  function open(i){ opener=tiles[i]; show(i); lb.hidden=false; lb.style.display='flex'; document.body.style.overflow='hidden'; lb.querySelector('[data-lb=close]').focus(); }
+  function close(){ lb.hidden=true; lb.style.display='none'; document.body.style.overflow=''; cur=-1; if(opener) opener.focus(); }
+  tiles.forEach(function(t,i){ t.addEventListener('click',function(){ open(i); }); });
+  lb.addEventListener('click',function(e){
+    var a=e.target.closest('[data-lb]');
+    if(a){ var k=a.getAttribute('data-lb'); if(k==='close') close(); else show(cur+(k==='next'?1:-1)); return; }
+    if(e.target===lb) close();
+  });
+  document.addEventListener('keydown',function(e){
+    if(cur<0) return;
+    if(e.key==='Escape') close(); else if(e.key==='ArrowRight') show(cur+1); else if(e.key==='ArrowLeft') show(cur-1);
+  });
+  var x0=null; lb.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+  lb.addEventListener('touchend',function(e){ if(x0===null) return; var dx=e.changedTouches[0].clientX-x0; if(Math.abs(dx)>50) show(cur+(dx<0?1:-1)); x0=null; });
+})();
+</script>
 
 </body>
 </html>
